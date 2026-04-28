@@ -25,6 +25,11 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
+          readinessProbe:
+            grpc:
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -69,6 +74,11 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
+          readinessProbe:
+            grpc:
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -110,6 +120,11 @@ spec:
             grpc:
               port: 3550
             initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            grpc:
+              port: 3550
+            initialDelaySeconds: 5
             periodSeconds: 5
 
 ---
@@ -155,6 +170,11 @@ spec:
               port: 50051
             initialDelaySeconds: 10
             periodSeconds: 5
+          readinessProbe:
+            grpc:
+              port: 50051
+            initialDelaySeconds: 5
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -199,6 +219,11 @@ spec:
               port: 7000
             initialDelaySeconds: 10
             periodSeconds: 5
+          readinessProbe:
+            grpc:
+              port: 7000
+            initialDelaySeconds: 5
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -241,6 +266,11 @@ spec:
               port: 50051
             initialDelaySeconds: 10
             periodSeconds: 5
+          readinessProbe:
+            grpc:
+              port: 50051
+            initialDelaySeconds: 5
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -282,6 +312,11 @@ spec:
             grpc:
               port: 9555
             initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            grpc:
+              port: 9555
+            initialDelaySeconds: 5
             periodSeconds: 5
 
 ---
@@ -327,6 +362,11 @@ spec:
               port: 7070
             initialDelaySeconds: 10
             periodSeconds: 5
+          readinessProbe:
+            grpc:
+              port: 7070
+            initialDelaySeconds: 5
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -365,6 +405,11 @@ spec:
             tcpSocket:
               port: 6379
             initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            tcpSocket:
+              port: 6379
+            initialDelaySeconds: 5
             periodSeconds: 5
           volumeMounts:
             - name: redis-data
@@ -426,6 +471,11 @@ spec:
               port: 5050
             initialDelaySeconds: 10
             periodSeconds: 5
+          readinessProbe:
+            grpc:
+              port: 5050
+            initialDelaySeconds: 5
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -483,6 +533,12 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /_healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -526,6 +582,11 @@ spec:
             grpc:
               port: 9555
             initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            grpc:
+              port: 9555
+            initialDelaySeconds: 5
             periodSeconds: 5
 
 ---
