@@ -20,6 +20,11 @@ spec:
           env:
             - name: PORT
               value: "8080"
+          livenessProbe:
+            grpc:
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -59,6 +64,11 @@ spec:
               value: "8080"
             - name: PRODUCT_CATALOG_SERVICE_ADDR
               value: "productcatalogservice:3550"
+          livenessProbe:
+            grpc:
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -96,6 +106,11 @@ spec:
           env:
             - name: PORT
               value: "3550"
+          livenessProbe:
+            grpc:
+              port: 3550
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -135,6 +150,11 @@ spec:
               value: "50051"
             - name: DISABLE_PROFILER
               value: "1"
+          livenessProbe:
+            grpc:
+              port: 50051
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -174,6 +194,11 @@ spec:
               value: "7000"
             - name: DISABLE_PROFILER
               value: "1"
+          livenessProbe:
+            grpc:
+              port: 7000
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -211,6 +236,11 @@ spec:
           env:
             - name: PORT
               value: "50051"
+          livenessProbe:
+            grpc:
+              port: 50051
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -248,6 +278,11 @@ spec:
           env:
             - name: PORT
               value: "9555"
+          livenessProbe:
+            grpc:
+              port: 9555
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -287,6 +322,11 @@ spec:
               value: "7070"
             - name: REDIS_ADDR
               value: "redis-cart:6379"
+          livenessProbe:
+            grpc:
+              port: 7070
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -321,6 +361,11 @@ spec:
           image: redis:alpine
           ports:
             - containerPort: 6379
+          livenessProbe:
+            tcpSocket:
+              port: 6379
+            initialDelaySeconds: 10
+            periodSeconds: 5
           volumeMounts:
             - name: redis-data
               mountPath: /data
@@ -376,6 +421,11 @@ spec:
               value: "currencyservice:7000"
             - name: CART_SERVICE_ADDR
               value: "cartservice:7070"
+          livenessProbe:
+            grpc:
+              port: 5050
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -427,6 +477,12 @@ spec:
               value: "checkoutservice:5050"
             - name: AD_SERVICE_ADDR
               value: "adservice:9555"
+          livenessProbe:
+            httpGet:
+              path: /_healthz
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
@@ -466,6 +522,11 @@ spec:
           env:
             - name: PORT
               value: "9555"
+          livenessProbe:
+            grpc:
+              port: 9555
+            initialDelaySeconds: 10
+            periodSeconds: 5
 
 ---
 apiVersion: v1
