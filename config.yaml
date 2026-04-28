@@ -30,6 +30,13 @@ spec:
               port: 8080
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 
 ---
 apiVersion: v1
@@ -79,6 +86,13 @@ spec:
               port: 8080
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 220Mi
+            limits:
+              cpu: 200m
+              memory: 450Mi
 
 ---
 apiVersion: v1
@@ -126,6 +140,13 @@ spec:
               port: 3550
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 
 ---
 apiVersion: v1
@@ -175,6 +196,13 @@ spec:
               port: 50051
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 
 ---
 apiVersion: v1
@@ -224,6 +252,13 @@ spec:
               port: 7000
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 
 ---
 apiVersion: v1
@@ -271,6 +306,13 @@ spec:
               port: 50051
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 
 ---
 apiVersion: v1
@@ -318,6 +360,13 @@ spec:
               port: 9555
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 
 ---
 apiVersion: v1
@@ -367,6 +416,13 @@ spec:
               port: 7070
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 200m
+              memory: 64Mi
+            limits:
+              cpu: 300m
+              memory: 128Mi
 
 ---
 apiVersion: v1
@@ -411,6 +467,13 @@ spec:
               port: 6379
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 70m
+              memory: 200Mi
+            limits:
+              cpu: 125m
+              memory: 256Mi
           volumeMounts:
             - name: redis-data
               mountPath: /data
@@ -476,6 +539,13 @@ spec:
               port: 5050
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 
 ---
 apiVersion: v1
@@ -539,6 +609,13 @@ spec:
               port: 8080
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 
 ---
 apiVersion: v1
@@ -588,6 +665,13 @@ spec:
               port: 9555
             initialDelaySeconds: 5
             periodSeconds: 5
+          resources:
+            requests:
+              cpu: 200m
+              memory: 180Mi
+            limits:
+              cpu: 300m
+              memory: 300Mi
 
 ---
 apiVersion: v1
